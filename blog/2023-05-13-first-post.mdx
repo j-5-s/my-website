@@ -1,0 +1,29 @@
+---
+slug: first-post
+title: NFT's to combat content theft
+authors: [j5s]
+tags: [meta, idea]
+---
+
+This blog is going to be a rambling of my thoughts in my journey
+to learn new software.  
+
+The first problem to solve in creating content is theft.
+If I work hard writting original content I want to make sure
+lazy and unoriginal individuals dont just come along and
+steal it. With this in mind, NFT's seem like a good possible
+solution to this problem. 
+
+The solution:
+After I publish a page I will mint an NFT that will contain:
+ - the url
+ - the html content of the page
+ - a screenshot
+The page will contain a metatag such as:
+```html
+<meta name="ethereum-address" content="0x1234567890abcdef">
+```
+This will be done by a chrome plugin that when on the page will look for the meta tag and
+ - sign a transaction as that wallet owner
+ - create the data (above) and send it to arweave
+ - create the NFT on polygon network

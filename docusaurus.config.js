@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://j5s.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -67,7 +67,7 @@ const config = {
         title: 'j5s',
         logo: {
           alt: 'j5s Logo',
-          src: 'img/logo.svg',
+          src: 'img/r4o.png',
         },
         items: [
           {
