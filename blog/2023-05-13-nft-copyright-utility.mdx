@@ -1,0 +1,85 @@
+---
+slug: nft-copyright-extension
+title: NFT's to combat content theft
+authors: [j5s]
+tags: [draft, web3, copyright, meta]
+---
+## A New Project Idea
+
+This blog is going to be a rambling of my thoughts in my journey
+to learn new software.  
+
+The first problem that comes to mind with a blog is content theft.
+If I write original content I want to make sure
+unoriginal individuals don't come along and
+steal it. Cause I know they will, it would be great to have a way
+to prove I am the original author. NFT's seem like a good use case
+for this problem. 
+
+The solution:
+After I publish a page I will mint an NFT that will contain:
+ - the url of the content
+ - the html content of the page in text
+ - a screenshot of the page
+The page will contain a metatag such as:
+```html
+<meta name="ethereum-address" content="0x1234567890abcdef">
+```
+This will be done by a chrome plugin that when activated will look for the meta tag and
+ - sign a transaction as that wallet owner
+ - create the data (above) and send it to Arweave
+ - create the NFT on network (polygon?)
+
+
+## The Parts
+
+### Chrome Extension
+Chrome extensions can be complex in their different environments. From background scripts to popovers
+it can get messy fast. Ideally i want something like [getAlby](https://github.com/getAlby/lightning-browser-extension)
+but would prefer not recreating it all from scratch. Requirments:
+ - React
+ - typescript
+ - e2e tests
+ - unit tests
+ - prettier
+
+I don't want to build from scratch and know a few exist:
+ - [chrome-extension-boilerplate-react
+](https://github.com/lxieyang/chrome-extension-boilerplate-react)
+ - [chrome-extension-typescript-starter](https://github.com/chibat/chrome-extension-typescript-starter)
+
+This will be something i can re-use anytime I want a chrome extension. It will be considered done when:
+ - clicking the extension opens up a popover that has a button which upon clicking executes javascript on the page
+ - has e2e/unit tests
+ - Github Actions setup to test/build/deploy the plugin
+
+### Web3 Client Integration
+Part two of the work will be building the web3 integration to a network like polygon. This should also exist on its own
+and be a starting point for future projects.
+Requirements are:
+ - a mint button that
+  - copies all html from the page
+  - gets the url
+  - creates a hash of the text of the page
+ - A service to upload content to Arweave and return ID's for NFT
+ - mints the NFT using a script
+
+### Web3 Solidity Smart Contract
+The chrome extension must interact with the contract to mint the NFT. The contract must have
+ - A mint function
+ - unique hash for content
+ - store the url
+ - metadata with links to data on Arweave
+  - screenshot
+  - html
+
+### Integration
+Integrate the web3 client, smart contract into the extension for the full functionality of the project.
+
+## Future Steps
+
+I would like a way for users to validate that the page is the original content. Perhaps some sort of badge / js snippet
+to place on the page that would show the user the content is original.  
+
+Some sort of service that automates dmca notices to websites that steals my content. Perhaps the badge and service could
+be something I can resell?
