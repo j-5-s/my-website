@@ -1,0 +1,63 @@
+---
+slug: chrome-extension-review
+title: Chrome Extension App Setup
+authors: [j5s]
+tags: [chrome-extension, typescript, boilerplate]
+---
+## Chrome Extension Setup
+After about 30 minutes or so of research I've decided to go with [lxieyang/chrome-extension-boilerplate-react](https://github.com/lxieyang/chrome-extension-boilerplate-react).
+It doesn't have everything I want, but it also doesn't have a lot of things I don't want. 
+
+
+### Features
+
+#### New page
+When opening a new tab you can set the webpage for the user:
+![new tab](/img/2023-05-14/new-tab.png)
+:::info
+New to me!
+:::
+
+#### Dev Tools Panel
+![dev-tools](/img/2023-05-14/dev-tools.png)
+
+#### Popup
+![popup](/img/2023-05-14/popup.png)
+
+#### Settings Page / options
+![settings](/img/2023-05-14/settings.png)
+
+#### Content
+There is a content module to run JS on the page the user is on.
+
+#### background
+There is a background page for background tasks for [managing events](https://developer.chrome.com/docs/extensions/mv2/background_pages/).
+
+
+### Bugs / Gotchas
+The webpack dev server will cause lots of issues on other sites. 
+I had to disable the extension when trying to do other things such as asking ChatGPT
+questions or Googling. 
+![error](/img/2023-05-14/error.png)
+
+I did find [a solution](https://github.com/lxieyang/chrome-extension-boilerplate-react/issues/150#issuecomment-1405037366) for this one specific issue but didnt spend time figuring out how to fix google 
+search from infinitely reloading the browser when the dev server is running. 
+
+A good workaround is to create a new profile in
+chrome and develop the extension in that sandbox
+and do everything else in your default profile.
+
+### Whats missing
+ - unit tests
+ - e2e tests
+ - much is written in js, not typescript
+ - tailwind
+
+
+## Conclusion
+All in all seems like a good minimal solution to an extension setup. 
+Downside (or upside depending on your perspective) is it doesn't make
+many decisions around UI styling, message passing or state management.
+I'm going to need to add a few libraries as I go to customize this
+to my liking.
+
