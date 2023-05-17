@@ -1,0 +1,59 @@
+---
+slug: chrome-extension-customizations
+title: Chrome Extension Customizations
+authors: [j5s]
+tags: [chrome-extension, typescript, boilerplate]
+---
+import ReactPlayer from 'react-player'
+
+## Customizations
+
+I've extended [this extension boilerplate](https://github.com/lxieyang/chrome-extension-boilerplate-react)
+with a couple new features in [my fork](https://github.com/j-5-s/chrome-extension-boilerplate-react):
+ - Jest unit tests
+ - Tailwind
+ - Persistent state utility
+ - Message passing utility
+
+You can see all my changes [here](https://github.com/lxieyang/chrome-extension-boilerplate-react/compare/master...j-5-s:chrome-extension-boilerplate-react:master).
+Persistent state and message passing between the background script and other pages
+was important for me to setup as it can get complex. To do this I created custom hook [`usePersistedState`](https://github.com/j-5-s/chrome-extension-boilerplate-react/blob/master/src/common/msg/usePersistedState.ts)
+
+### `usePersistedState()`
+
+Example use:
+```jsx title="src/common/msg/usePersistedState.ts"
+import React from 'react'
+import { usePersistedState } from '../../common/msg/usePersistedState';
+export function Counter() {
+
+  const { value, actions } = usePersistedState<number>('counter', 0);
+
+  return (
+    <div className="flex justify-center">
+      <div className="flex items-center">
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          aria-label="Increment value"
+          onClick={() => {
+            actions.setState(value + 1);
+          }}
+        >
+          Increment
+        </button>
+        <span className="px-4">{value}</span>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          aria-label="Decrement value"
+          onClick={() => {
+            actions.setState(value - 1);
+          }}
+        >
+          Decrement
+        </button>
+      </div>
+    </div>
+  )
+}
+```
+<ReactPlayer playing controls url='/video/2023-05-16/demo.webm' />
