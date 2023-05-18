@@ -125,7 +125,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       metadata: [
-        {name: 'wallet-address', content: '0x66c2801e144A0BA4d7F6aFF62f535F312aaF609a'}
+        {name: 'wallet-address:ethereum', content: '0x66c2801e144A0BA4d7F6aFF62f535F312aaF609a'}
       ],
     }),
 };
