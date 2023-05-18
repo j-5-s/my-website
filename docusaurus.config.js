@@ -9,7 +9,6 @@ const config = {
   title: 'j5s',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-
   // Set the production url of your site here
   url: 'https://j5s.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -125,6 +124,9 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      metadata: [
+        {name: 'wallet-address', content: '0x66c2801e144A0BA4d7F6aFF62f535F312aaF609a'}
+      ],
     }),
 };
 
