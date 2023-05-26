@@ -1,0 +1,15 @@
+---
+slug: chrome-extension-vite
+title: Chrome Extension Customizations with Vite
+authors: [j5s]
+tags: [chrome-extension, typescript, boilerplate]
+---
+## Chrome Extension Update
+In my [previous post](/blog/chrome-extension-customizations) I added a few customizations to a great
+boilerplate library for creating a chrome extension with React. 
+However, after running into webpack errors (such as [this one](https://github.com/lxieyang/chrome-extension-boilerplate-react/issues/150)) with websockets and HMR
+I've decided to leverage a new boilerplate - [chrome-extension-boilerplate-react-vite](https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite).
+Its got all the features of the previous one except runs on Vite for local development.
+
+I've created [a template](https://github.com/j-5-s/chrome-ext-vite) for myself for future extensions with the additional `usePersistedState`
+hook as previously described.  
