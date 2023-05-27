@@ -126,7 +126,11 @@ const config = {
       },
       metadata: [
         {
-          name: 'content-nft-address', content: '0x423695fc76023ebc93ba1998172e933f4e5cd748'
+          name: 'content-nft-address', content: '0x423695fc76023ebc93ba1998172e933f4e5cd748',
+         
+        },
+        {
+          name: 'content-nft-nft_contract_network', content: 'maticmum',
         }
       ],
     }),
