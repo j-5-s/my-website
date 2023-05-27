@@ -130,7 +130,7 @@ const config = {
          
         },
         {
-          name: 'content-nft-nft_contract_network', content: 'maticmum',
+          name: 'nft_contract_network', content: 'maticmum',
         }
       ],
     }),
