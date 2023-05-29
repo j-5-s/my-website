@@ -126,7 +126,7 @@ const config = {
       },
       metadata: [
         {
-          name: 'content-nft-address', content: '0xd5471fc7a77e90c7f89314f7a31a22f8df6c78b9',
+          name: 'content-nft-address', content: '0xac1c073f8fb1f5005e8ec698e7a5574b9fa56a04',
          
         },
         {
