@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import { Analytics } from '@vercel/analytics/react';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
+import { BTCPayButton } from '../components/HomepageFeatures/btc/BTCPayButton';
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -15,13 +15,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/blog">
-            Check out my blog
-          </Link>
-        </div>
+        <BTCPayButton />
       </div>
     </header>
   );
